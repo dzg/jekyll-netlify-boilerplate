@@ -1,34 +1,15 @@
 ---
 layout: default
 ---
-{% assign author = site.data.authors[page.author] %}
 
-<h2>{{ page.title }}</h2>
+{%-include back_link.html-%}
 
-<time datetime="{{ page.date }}">
-  <small>
-    <strong>{{ page.date | date_to_string }}</strong>
-    {% if author %}
-      by {{ author.name }}
-    {% endif %}
-  </small>
-</time>
+<article>
+  <p class="post-meta">
+    <time datetime="{{ page.date }}">{{ page.date | date: site.theme_config.date_format }}</time>
+  </p>
+  
+  <h1>{{ page.title }}</h1>
 
-{% include page-intro.html %}
-
-{{ content }}
-
-<nav aria-label="Adjacent Posts">
-  <ul>
-    {% if page.previous.url %}
-      <li>
-        <a href="{{page.previous.url}}" rel="prev">&laquo; {{page.previous.title}}</a>
-      </li>
-    {% endif %}
-    {% if page.next.url %}
-      <li>
-        <a href="{{page.next.url}}" rel="next">{{page.next.title}} &raquo;</a>
-      </li>
-    {% endif %}
-  </ul>
-</nav>
+  {{ content }}
+</article>
