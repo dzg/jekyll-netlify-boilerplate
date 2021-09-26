@@ -28,7 +28,8 @@ permalink: /blog/:title
 # (used as a hook for styling etc)
 section: true
 
-remote_theme: riggraz/no-style-please
+remote_theme: BDHU/minimalist
+# remote_theme: riggraz/no-style-please
 
 # set to 'true' to enable Netlify CMS (/admin) in production builds
 netlifycms: true
