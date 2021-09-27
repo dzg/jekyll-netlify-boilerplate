@@ -30,7 +30,22 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "Categories", name: "categories", widget: "string", required: false}
+      - label: "Categories"
+        name: "categories"
+        widget: "relation"
+        required: false
+        multiple: true
+        collection: categories
+  - name: categories
+    label: Categories
+    folder: content/authors
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - widget: string
+        name: category
+        label: Name
+        required: true
     # PAGES
   - name: "page"
     label: "Page"
